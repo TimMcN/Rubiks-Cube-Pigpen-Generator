@@ -24,11 +24,11 @@ int main()
     {
         sf::Color color = face_colors.back();
         face_colors.pop_back();
-        posx_base += 60*3*(i+1);
         std::cout << i <<std::endl;
         posy=0;
         for (int j = 0; j<3; j++)
         {
+            posx=posx_base;
             for (int k=0; k<3; k++){
             sf::RectangleShape shape(sf::Vector2f(50, 50));
             shape.setPosition(posx, posy);
@@ -37,8 +37,9 @@ int main()
             posx+=60;
             }
             posy+=60;
-            posx=posx_base;
+            
         }
+        posx_base += 60*3*(i+1);
     }
     sf::RectangleShape shape2(sf::Vector2f(50, 50));
     window1.clear(sf::Color::White);
