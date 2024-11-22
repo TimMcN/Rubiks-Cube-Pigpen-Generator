@@ -6,9 +6,9 @@
 
 int main()
 {
-    sf::RenderWindow window1(sf::VideoMode(1200,800), "Unwrapped");
-    sf::Color bg_color = sf::Color{50,50,50,255};
-    window1.clear(bg_color);
+    sf::RenderWindow window1(sf::VideoMode(1600,1000), "Unwrapped");
+    sf::Color bg_color = sf::Color{200,200,200};
+    window1.clear(sf::Color::Cyan);
     
     std::vector<sf::RectangleShape> face;
     float posx_base = 0;
@@ -22,9 +22,9 @@ int main()
     face_colors.push_back(sf::Color::Blue);
     for (int i=0; i<5; i++)
     {
+        posx_base = 60*3*(i);
         sf::Color color = face_colors.back();
         face_colors.pop_back();
-        std::cout << i <<std::endl;
         posy=0;
         for (int j = 0; j<3; j++)
         {
@@ -39,10 +39,10 @@ int main()
             posy+=60;
             
         }
-        posx_base += 60*3*(i+1);
+        
     }
     sf::RectangleShape shape2(sf::Vector2f(50, 50));
-    window1.clear(sf::Color::White);
+    window1.clear(bg_color);
     for (int i=0; i<face.size(); i++){
         window1.draw(face[i]);
     }
