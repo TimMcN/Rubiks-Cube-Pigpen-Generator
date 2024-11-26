@@ -1,5 +1,6 @@
 #include<string>
 #include<vector>
+#include<face.h>
 class Rubiks
 {
 public:
@@ -7,6 +8,8 @@ public:
   void SetFace(int face, std::string); // note, no function body        
 private:
   int member;
+  enum faces{    Top,    Bottom,    Front,    Rear,    Left,    Right  };
+  std::vector<std::vector<face>>
 };
 
 // I need to instantiate the full rubiks cube, ordered by faces. TOP, BOTTOM, REAR, FRONT, LEFT, RIGHT
